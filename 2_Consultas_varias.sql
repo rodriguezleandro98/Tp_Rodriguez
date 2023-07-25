@@ -1,3 +1,6 @@
+
+USE call_center_db;
+
 SELECT * FROM empresas;
 SELECT * FROM paises; 
 SELECT * FROM puestos;

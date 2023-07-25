@@ -77,12 +77,10 @@ CREATE TABLE IF NOT EXISTS roles (
 
 -- RELACION MUCHOS A MUCHOS = "empresas_x_paises"
 CREATE TABLE IF NOT EXISTS empresas_x_paises (
-	ID INT NOT NULL AUTO_INCREMENT,
     id_empresa INT NOT NULL,
-    id_pais INT NULL,
+    id_pais INT NOT NULL,
     estado TINYINT NOT NULL default 1,
-    PRIMARY KEY(ID),
-    UNIQUE KEY(ID),
+    PRIMARY KEY(id_empresa, id_pais),
     FOREIGN KEY (id_pais) references paises(ID),
     FOREIGN KEY (id_empresa) references empresas(ID)
 );
@@ -147,7 +145,7 @@ CREATE TABLE IF NOT EXISTS tickets (
     id_estado INT NOT NULL,
     id_llamado INT NOT NULL,
     id_grupo_de_derivacion INT NOT NULL,
-    titulo VARCHAR(30) NOT NULL,
+    titulo VARCHAR(50) NOT NULL,
     descripcion VARCHAR(300) NOT NULL,
     fecha_inicio DATETIME NOT NULL default NOW(),
     fecha_fin DATETIME NULL,
