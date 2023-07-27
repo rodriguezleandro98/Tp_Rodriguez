@@ -67,22 +67,22 @@ INSERT INTO empresas_x_paises (id_empresa,id_pais) VALUES (8,6);
 INSERT INTO empresas_x_paises (id_empresa,id_pais) VALUES (8,7);
 
 
-INSERT INTO contactos (nombre, apellido, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
-('Leandro', 'Rodriguez', 41390062, 1, 1, 1 );
-INSERT INTO contactos (nombre, apellido, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
-('Ariel', 'Rodriguez', 39009709, 1, 3, 2 );
-INSERT INTO contactos (nombre, apellido, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
-('Nancy', 'Regner', 20875960, 3, 2, 3 );
-INSERT INTO contactos (nombre, apellido, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
-('Pepe', 'Luis', 12345678, 5, 4, 3 );
-INSERT INTO contactos (nombre, apellido, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
-('Ruben', 'Alcaraz', 98765432, 2, 2, 3 );
-INSERT INTO contactos (nombre, apellido, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
-('Javier', 'Arbulu', 45645645, 4, 5, 3 );
-INSERT INTO contactos (nombre, apellido, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
-('Jose', 'Rodriguez', 12378956, 6, 6, 1 );
-INSERT INTO contactos (nombre, apellido, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
-('Arnoldo', 'Regner', 45896314, 7, 1, 1 );
+INSERT INTO contactos (nombre_completo, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
+('Leandro Rodriguez', 41390062, 1, 1, 1 );
+INSERT INTO contactos (nombre_completo, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
+('Ariel Rodriguez', 39009709, 1, 3, 2 );
+INSERT INTO contactos (nombre_completo, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
+('Nancy Regner', 20875960, 3, 2, 3 );
+INSERT INTO contactos (nombre_completo, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
+('Pepe Luis', 12345678, 5, 4, 3 );
+INSERT INTO contactos (nombre_completo, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
+('Ruben Alcaraz', 98765432, 2, 2, 3 );
+INSERT INTO contactos (nombre_completo, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
+('Javier Arbulu', 45645645, 4, 5, 3 );
+INSERT INTO contactos (nombre_completo, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
+('Jose Rodriguez', 12378956, 6, 6, 1 );
+INSERT INTO contactos (nombre_completo, DNI, id_pais_contacto, id_empresa_contacto, id_puesto_contacto) VALUES 
+('Arnoldo Regner', 45896314, 7, 1, 1 );
 
 INSERT INTO telefonos (telefono, id_telefono_contacto) VALUES ( 47954341, 1 );
 INSERT INTO telefonos (telefono, id_telefono_contacto) VALUES ( 45612385, 2);

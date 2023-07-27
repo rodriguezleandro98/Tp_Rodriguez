@@ -8,6 +8,10 @@ VOY A TENER UNA FK DE PAISES Y UNA FK DE EMPRESAS.
 -------- hecho --------
 */
 
+/*
+RECORDAR CREAR LAS FK EN CASCADA SEGUN CORRESPONDA TANTO EN UPDATE O EN DELETE, SINO RESTRICT
+*/
+
 USE call_center_db;
 
 -- Creacion de tablas 
@@ -15,6 +19,7 @@ USE call_center_db;
 CREATE TABLE IF NOT EXISTS empresas (
 	ID INT NOT NULL AUTO_INCREMENT,
     empresa VARCHAR(50) NOT NULL,
+    fecha_reg DATETIME NOT NULL default NOW(),
     estado TINYINT NOT NULL default 1,
     PRIMARY KEY(ID),
     UNIQUE KEY(ID)
@@ -87,8 +92,7 @@ CREATE TABLE IF NOT EXISTS empresas_x_paises (
 
 CREATE TABLE IF NOT EXISTS contactos (
 	ID INT NOT NULL AUTO_INCREMENT,
-    nombre VARCHAR(50) NOT NULL,
-    apellido VARCHAR(50) NOT NULL,
+    nombre_completo VARCHAR(130) NOT NULL,
     DNI VARCHAR(15) NOT NULL,
     id_pais_contacto INT NOT NULL,
     id_empresa_contacto INT NOT NULL,
@@ -117,6 +121,7 @@ CREATE TABLE IF NOT EXISTS operadores (
     usuario VARCHAR(50) NOT NULL,
     clave VARCHAR(50) NOT NULL,
     id_rol_operador INT NOT NULL,
+    fecha_reg DATETIME NOT NULL default NOW(),
     estado TINYINT NOT NULL default 1,
     PRIMARY KEY(ID),
     UNIQUE KEY(ID),
