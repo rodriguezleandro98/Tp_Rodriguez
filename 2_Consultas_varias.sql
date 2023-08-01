@@ -15,6 +15,25 @@ SELECT * FROM llamados;
 SELECT * FROM operadores;
 
 SELECT now();
+ 
+SELECT COUNT(T.ID) 
+FROM tickets AS T 
+INNER JOIN operadores AS O ON O.ID = T.id_operador AND T.id_operador = 2;
+
+SELECT COUNT(T.ID)
+FROM tickets as T
+INNER JOIN operadores AS O ON O.ID = T.id_operador 
+WHERE 2 = t.id_operador AND T.id_estado = 3;
+
+SELECT COUNT(T.ID)
+FROM tickets as T
+INNER JOIN operadores AS O ON O.ID = T.id_operador 
+WHERE 2 = t.id_operador AND T.id_estado = 4;
+
+SELECT COUNT(T.ID)
+FROM tickets as T
+INNER JOIN operadores AS O ON O.ID = T.id_operador 
+WHERE 2 = t.id_operador AND T.id_estado = 5;
 
 SELECT * FROM tickets;
 SELECT * FROM empresas_x_paises;
