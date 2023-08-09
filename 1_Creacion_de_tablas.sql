@@ -181,3 +181,22 @@ CREATE TABLE IF NOT EXISTS comentarios (
     FOREIGN KEY (id_ticket) references tickets(ID),
     FOREIGN KEY (id_llamado) references llamados(ID)
 );
+
+-- TABLAS LOGS
+
+CREATE TABLE IF NOT EXISTS log_ticket(
+	log_id INT NOT NULL AUTO_INCREMENT,
+    event_name VARCHAR(40) NOT NULL,
+    id_ticket INT NOT NULL,
+    operador_viejo INT NULL,
+    operador_nuevo INT NULL,
+    severidad_viejo INT NULL,
+    severidad_nuevo INT NULL,
+    estado_viejo INT NULL,
+    estado_nuevo INT NULL,
+    grupo_de_derivacion_viejo INT NULL,
+    grupo_de_derivacion_nuevo INT NULL,
+    usuario VARCHAR(45) NOT NULL,
+    fecha DATETIME NOT NULL DEFAULT NOW(),
+    PRIMARY KEY (log_id)
+)
