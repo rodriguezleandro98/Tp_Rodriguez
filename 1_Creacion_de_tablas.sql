@@ -187,16 +187,27 @@ CREATE TABLE IF NOT EXISTS comentarios (
 CREATE TABLE IF NOT EXISTS log_ticket(
 	log_id INT NOT NULL AUTO_INCREMENT,
     event_name VARCHAR(40) NOT NULL,
-    id_ticket INT NOT NULL,
-    operador_viejo INT NULL,
-    operador_nuevo INT NULL,
-    severidad_viejo INT NULL,
-    severidad_nuevo INT NULL,
-    estado_viejo INT NULL,
-    estado_nuevo INT NULL,
-    grupo_de_derivacion_viejo INT NULL,
-    grupo_de_derivacion_nuevo INT NULL,
+    ID INT NOT NULL,
+    operador_viejo INT,
+    operador_nuevo INT,
+    severidad_viejo INT,
+    severidad_nuevo INT,
+    estado_viejo INT,
+    estado_nuevo INT,
+    grupo_de_derivacion_viejo INT,
+    grupo_de_derivacion_nuevo INT,
     usuario VARCHAR(45) NOT NULL,
-    fecha DATETIME NOT NULL DEFAULT NOW(),
+    fecha DATETIME DEFAULT NOW(),
     PRIMARY KEY (log_id)
-)
+);
+
+CREATE TABLE IF NOT EXISTS log_empresa(
+	log_id INT NOT NULL AUTO_INCREMENT,
+    event_name VARCHAR(40) NOT NULL,
+    ID INT NOT NULL,
+    empresa VARCHAR(50),
+    estado BIT,
+    usuario VARCHAR(45) NOT NULL,
+    fecha DATETIME DEFAULT NOW(),
+    PRIMARY KEY (log_id)
+);

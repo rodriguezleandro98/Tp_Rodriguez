@@ -9,10 +9,11 @@ DELIMITER $$
 CREATE PROCEDURE SP_SolucionarTicket( IN ID int, IN ID_operador int
 )
 BEGIN
+	DECLARE Ticket INT;
 	SET @id_ticket = ID;
 	SET @id_operador = ID_operador;
 	IF @id_ticket >= 1 AND @id_operador >= 1 THEN
-		SELECT COUNT(t.id) AS Ticket FROM tickets as t WHERE @id_ticket = t.ID;
+		SELECT COUNT(t.id) INTO Ticket FROM tickets as t WHERE @id_ticket = t.ID;
 			IF Ticket = 1 THEN
 				UPDATE tickets as t SET t.id_estado = 3, t.fecha_fin = now(), t.id_operador = @id_operador
 			WHERE t.ID = @id_ticket;
