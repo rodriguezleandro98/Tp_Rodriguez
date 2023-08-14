@@ -104,7 +104,7 @@ INSERT INTO operadores (usuario, clave, id_rol_operador) VALUES ( 'nyamarte', 'M
 INSERT INTO operadores (usuario, clave, id_rol_operador) VALUES ( 'jferrufino', 'Moldes3060', 2 );
 INSERT INTO operadores (usuario, clave, id_rol_operador) VALUES ( 'jsordello', 'juanmecha', 3 );
 INSERT INTO operadores (usuario, clave, id_rol_operador) VALUES ( 'camblorpepe', 'contraseña123', 3 );
-
+/*
 INSERT INTO llamados (id_operador, id_contacto) VALUES ( 1, 1);
 INSERT INTO llamados (id_operador, id_contacto) VALUES ( 1, 2);
 INSERT INTO llamados (id_operador, id_contacto) VALUES ( 1, 3);
@@ -118,7 +118,7 @@ INSERT INTO llamados (id_operador, id_contacto) VALUES ( 4, 6);
 INSERT INTO llamados (id_operador, id_contacto) VALUES ( 3, 5);
 INSERT INTO llamados (id_operador, id_contacto) VALUES ( 2, 7);
 INSERT INTO llamados (id_operador, id_contacto) VALUES ( 4, 7);
-
+*/
 -- 1
 INSERT INTO tickets (id_operador
 , id_contacto
@@ -126,11 +126,10 @@ INSERT INTO tickets (id_operador
 , id_severidad
 , id_categoria
 , id_estado
-, id_llamado
 , id_grupo_de_derivacion
 , titulo
 , descripcion) 
-VALUES ( 1, 1, 1, 1, 1, 1, 1, 1, 'Prueba1', 'Descripcion prueba');
+VALUES ( 1, 1, 1, 1, 1, 1, 1, 'Prueba1', 'Descripcion prueba');
 
 -- 2
 INSERT INTO tickets (id_operador
@@ -139,11 +138,10 @@ INSERT INTO tickets (id_operador
 , id_severidad
 , id_categoria
 , id_estado
-, id_llamado
 , id_grupo_de_derivacion
 , titulo
 , descripcion) 
-VALUES ( 1, 2, 3, 2, 3, 4, 2, 2, 'Prueba2', 'Descripcion prueba2');
+VALUES ( 1, 2, 3, 2, 3, 4, 2, 'Prueba2', 'Descripcion prueba2');
 
 -- 3
 INSERT INTO tickets (id_operador
@@ -152,11 +150,10 @@ INSERT INTO tickets (id_operador
 , id_severidad
 , id_categoria
 , id_estado
-, id_llamado
 , id_grupo_de_derivacion
 , titulo
 , descripcion) 
-VALUES ( 1, 3, 2, 1, 1, 3, 3, 3, 'Prueba lalalalal 3', 'Se comunica por falla de equipo, se logra resolver');
+VALUES ( 1, 3, 2, 1, 1, 3, 3, 'Prueba lalalalal 3', 'Se comunica por falla de equipo, se logra resolver');
 
 -- 4
 INSERT INTO tickets (id_operador
@@ -165,11 +162,10 @@ INSERT INTO tickets (id_operador
 , id_severidad
 , id_categoria
 , id_estado
-, id_llamado
 , id_grupo_de_derivacion
 , titulo
 , descripcion) 
-VALUES ( 2, 4, 4, 2, 5, 2, 4, 4, 'CCC - Cambio en RRHH', 'Gerente pide cambiar cargo en sistema RRHH');
+VALUES ( 2, 4, 4, 2, 5, 2, 4, 'CCC - Cambio en RRHH', 'Gerente pide cambiar cargo en sistema RRHH');
 
 -- 5
 INSERT INTO tickets (id_operador
@@ -178,11 +174,10 @@ INSERT INTO tickets (id_operador
 , id_severidad
 , id_categoria
 , id_estado
-, id_llamado
 , id_grupo_de_derivacion
 , titulo
 , descripcion) 
-VALUES ( 3, 5, 2, 4, 5, 1, 11, 5, 'Prueba5', 'Descripcion pruebaaaaaaa5');
+VALUES ( 3, 5, 2, 4, 5, 1, 5, 'Prueba5', 'Descripcion pruebaaaaaaa5');
 
 -- 6
 INSERT INTO tickets (id_operador
@@ -191,11 +186,10 @@ INSERT INTO tickets (id_operador
 , id_severidad
 , id_categoria
 , id_estado
-, id_llamado
 , id_grupo_de_derivacion
 , titulo
 , descripcion) 
-VALUES ( 4, 6, 5, 1, 1, 1, 10, 1, 'ya me canse', 'lo mismo que el titulo');
+VALUES ( 4, 6, 5, 1, 1, 1, 1, 'ya me canse', 'lo mismo que el titulo');
 
 -- 7
 INSERT INTO tickets (id_operador
@@ -204,11 +198,10 @@ INSERT INTO tickets (id_operador
 , id_severidad
 , id_categoria
 , id_estado
-, id_llamado
 , id_grupo_de_derivacion
 , titulo
 , descripcion) 
-VALUES ( 2, 7, 6, 3, 3, 3, 12, 2, 'otra vez?', 'si querido');
+VALUES ( 2, 7, 6, 3, 3, 3, 2, 'otra vez?', 'si querido');
 
 -- 8
 INSERT INTO tickets (id_operador
@@ -217,66 +210,58 @@ INSERT INTO tickets (id_operador
 , id_severidad
 , id_categoria
 , id_estado
-, id_llamado
 , id_grupo_de_derivacion
 , titulo
 , descripcion) 
-VALUES ( 4, 7, 6, 1, 1, 1, 13, 3, 'bueno basta', 'ok te respeto');
+VALUES ( 4, 7, 6, 1, 1, 1, 3, 'bueno basta', 'ok te respeto');
 
 -- 1
 INSERT INTO comentarios (id_operador
 , id_ticket
-, id_llamado
 , texto
 ) 
-VALUES ( 1, 1, 1, 'Primer comentario');
+VALUES ( 1, 1, 'Primer comentario');
 
 -- 2
 INSERT INTO comentarios (id_operador
 , id_ticket
-, id_llamado
 , texto
 ) 
-VALUES ( 1, 2, 2, 'Solamente comento' );
+VALUES ( 1, 2, 'Solamente comento' );
 
 -- 3
 INSERT INTO comentarios (id_operador
 , id_ticket
-, id_llamado
 , texto
 , solucion
 ) 
-VALUES ( 1, 3, 3, 'Se logra solucionar', 1 );
+VALUES ( 1, 3, 'Se logra solucionar', 1 );
 
 -- 4
 INSERT INTO comentarios (id_operador
 , id_ticket
-, id_llamado
 , texto
 ) 
-VALUES ( 2, 4, 4, 'Derivado');
+VALUES ( 2, 4, 'Derivado');
 
 -- 5
 INSERT INTO comentarios (id_operador
 , id_ticket
-, id_llamado
 , texto
 ) 
-VALUES ( 4, 6, 10, 'Se realiza reclamo por caso abierto');
+VALUES ( 4, 6, 'Se realiza reclamo por caso abierto');
 
 -- 6
 INSERT INTO comentarios (id_operador
 , id_ticket
-, id_llamado
 , texto
 ) 
-VALUES ( 4, 8, 13, 'Reclamo, necesito celeridad');
+VALUES ( 4, 8, 'Reclamo, necesito celeridad');
 
 -- 7
 INSERT INTO comentarios (id_operador
 , id_ticket
-, id_llamado
 , texto
 , solucion
 ) 
-VALUES ( 2, 7, 12, 'Comentario solucion', 1);
+VALUES ( 2, 7, 'Comentario solucion', 1);

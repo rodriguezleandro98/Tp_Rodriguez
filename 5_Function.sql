@@ -60,4 +60,15 @@ BEGIN
 	RETURN resultado;
 END$$
 
+-- FUNCION QUE DEVUELVE INT ALEATORIO
+DELIMITER $$
+CREATE FUNCTION f_random() RETURNS int
+NO SQL
+BEGIN
+    DECLARE num_random INT;
+    SET num_random = 0;
+    SELECT FLOOR(RAND()*(999999-100+1))+100 INTO num_random;
+    RETURN num_random;
+END $$
+
 DELIMITER ;

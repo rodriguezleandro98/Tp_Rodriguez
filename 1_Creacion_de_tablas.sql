@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS operadores (
     UNIQUE KEY(usuario),
     FOREIGN KEY (id_rol_operador) references roles(ID)
 );
-
+/*
 CREATE TABLE IF NOT EXISTS llamados (
 	ID INT NOT NULL AUTO_INCREMENT,
     id_operador INT NOT NULL,
@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS llamados (
     FOREIGN KEY (id_operador) references operadores(ID),
     FOREIGN KEY (id_contacto) references contactos(ID)
 );
-
+*/
 CREATE TABLE IF NOT EXISTS tickets (
 	ID INT NOT NULL AUTO_INCREMENT,
     id_operador INT NOT NULL,
@@ -147,8 +147,8 @@ CREATE TABLE IF NOT EXISTS tickets (
     id_empresa INT NOT NULL,
     id_severidad INT NOT NULL,
     id_categoria INT NOT NULL,
-    id_estado INT NOT NULL,
-    id_llamado INT NOT NULL,
+    id_estado INT NOT NULL default 1,
+ -- id_llamado INT NOT NULL,
     id_grupo_de_derivacion INT NOT NULL,
     titulo VARCHAR(50) NOT NULL,
     descripcion VARCHAR(300) NOT NULL,
@@ -163,7 +163,7 @@ CREATE TABLE IF NOT EXISTS tickets (
     FOREIGN KEY (id_severidad) references severidades(ID),
     FOREIGN KEY (id_categoria) references categorias(ID),
     FOREIGN KEY (id_estado) references estados(ID),
-    FOREIGN KEY (id_llamado) references llamados(ID),
+--  FOREIGN KEY (id_llamado) references llamados(ID),
     FOREIGN KEY (id_grupo_de_derivacion) references grupos_de_derivacion(ID)
 );
 
@@ -171,15 +171,15 @@ CREATE TABLE IF NOT EXISTS comentarios (
 	ID INT NOT NULL AUTO_INCREMENT,
     id_operador INT NOT NULL,
     id_ticket INT NOT NULL,
-    id_llamado INT NOT NULL,
+ -- id_llamado INT NOT NULL,
     texto VARCHAR(200) NOT NULL,
     fecha DATETIME NOT NULL DEFAULT NOW(),
     solucion TINYINT NULL,
     PRIMARY KEY(ID),
     UNIQUE KEY(ID),
     FOREIGN KEY (id_operador) references operadores(ID),
-    FOREIGN KEY (id_ticket) references tickets(ID),
-    FOREIGN KEY (id_llamado) references llamados(ID)
+    FOREIGN KEY (id_ticket) references tickets(ID)
+ -- FOREIGN KEY (id_llamado) references llamados(ID)
 );
 
 -- TABLAS LOGS
