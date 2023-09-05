@@ -50,3 +50,43 @@ INNER JOIN estados AS e ON e.id = t.id_estado
 INNER JOIN empresas AS em ON em.id = t.id_empresa
 WHERE t.id_estado = 3
 );
+
+-- 6
+CREATE OR REPLACE VIEW tickets_closed AS (
+SELECT t.id as Ticket, em.empresa, t.titulo, e.estado, o.usuario AS Operador, t.fecha_fin as Fecha_cierre
+FROM Tickets as t
+INNER JOIN operadores AS o ON o.id = t.id_operador
+INNER JOIN estados AS e ON e.id = t.id_estado
+INNER JOIN empresas AS em ON em.id = t.id_empresa
+WHERE t.id_estado = 4
+);
+
+-- 7
+CREATE OR REPLACE VIEW tickets_open_analisys AS (
+SELECT t.id as Ticket, em.empresa, t.titulo, e.estado, o.usuario AS Operador
+FROM Tickets as t
+INNER JOIN operadores AS o ON o.id = t.id_operador
+INNER JOIN estados AS e ON e.id = t.id_estado
+INNER JOIN empresas AS em ON em.id = t.id_empresa
+WHERE t.id_estado = 1 AND 2
+);
+
+CREATE OR REPLACE VIEW tickets_empresa AS (
+
+SELECT e.ID, e.empresa, t.ID as Ticket, t.titulo, t.fecha_inicio, es.estado, gdd.mesa
+FROM empresas as e
+INNER JOIN tickets as t ON t.id_empresa = e.ID
+INNER JOIN estados as es ON t.id_estado = es.ID
+INNER JOIN grupos_de_derivacion as gdd ON t.id_grupo_de_derivacion = gdd.ID
+ORDER BY e.empresa asc
+);
+
+CREATE OR REPLACE VIEW tickets_employees AS (
+
+SELECT o.ID, o.usuario as Operador, t.ID as Ticket, t.titulo, t.fecha_inicio, es.estado, gdd.mesa
+FROM operadores as o
+INNER JOIN tickets as t ON t.id_empresa = o.ID
+INNER JOIN estados as es ON t.id_estado = es.ID
+INNER JOIN grupos_de_derivacion as gdd ON t.id_grupo_de_derivacion = gdd.ID
+ORDER BY o.usuario asc
+);

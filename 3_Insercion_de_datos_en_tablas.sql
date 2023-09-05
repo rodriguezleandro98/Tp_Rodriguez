@@ -11,13 +11,13 @@ INSERT INTO empresas (empresa) VALUES ('Zhoe');
 INSERT INTO empresas (empresa) VALUES ('Mimo');
 INSERT INTO empresas (empresa) VALUES ('Dior');
 
-INSERT INTO paises (pais) VALUES ( 'Argentina' );
-INSERT INTO paises (pais) VALUES ( 'Chile' );
-INSERT INTO paises (pais) VALUES ( 'Uruguay' );
-INSERT INTO paises (pais) VALUES ( 'Brasil' );
-INSERT INTO paises (pais) VALUES ( 'Ecuador' );
-INSERT INTO paises (pais) VALUES ( 'Peru' );
-INSERT INTO paises (pais) VALUES ( 'Bolivia' );
+INSERT INTO paises (pais) VALUES ( 'ARGENTINA' );
+INSERT INTO paises (pais) VALUES ( 'CHILE' );
+INSERT INTO paises (pais) VALUES ( 'URUGUAY' );
+INSERT INTO paises (pais) VALUES ( 'BRASIL' );
+INSERT INTO paises (pais) VALUES ( 'ECUADOR' );
+INSERT INTO paises (pais) VALUES ( 'PERU' );
+INSERT INTO paises (pais) VALUES ( 'BOLIVIA' );
 
 INSERT INTO puestos (puesto) VALUES ( 'Presidente' );
 INSERT INTO puestos (puesto) VALUES ( 'CEO' );
