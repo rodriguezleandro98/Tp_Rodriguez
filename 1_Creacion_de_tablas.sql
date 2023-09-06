@@ -86,8 +86,8 @@ CREATE TABLE IF NOT EXISTS empresas_x_paises (
     id_pais INT NOT NULL,
     estado TINYINT NOT NULL default 1,
     PRIMARY KEY(id_empresa, id_pais),
-    FOREIGN KEY (id_pais) references paises(ID),
-    FOREIGN KEY (id_empresa) references empresas(ID)
+    FOREIGN KEY (id_pais) references paises(ID) ON DELETE CASCADE ON UPDATE CASCADE, 
+    FOREIGN KEY (id_empresa) references empresas(ID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS contactos (
@@ -99,9 +99,9 @@ CREATE TABLE IF NOT EXISTS contactos (
     id_puesto_contacto INT NOT NULL,
     PRIMARY KEY(ID),
     UNIQUE KEY(ID),
-    FOREIGN KEY (id_pais_contacto) references paises(ID),
-    FOREIGN KEY (id_empresa_contacto) references empresas(ID),
-    FOREIGN KEY (id_puesto_contacto) references puestos(ID)
+    FOREIGN KEY (id_pais_contacto) references paises(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_empresa_contacto) references empresas(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_puesto_contacto) references puestos(ID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS telefonos (
@@ -112,8 +112,8 @@ CREATE TABLE IF NOT EXISTS telefonos (
     estado TINYINT NOT NULL default 1,
     PRIMARY KEY(ID),
     UNIQUE KEY(ID),
-    FOREIGN KEY (id_telefono_contacto) references contactos(ID),
-    FOREIGN KEY (id_telefono_empresa) references empresas(ID)
+    FOREIGN KEY (id_telefono_contacto) references contactos(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_telefono_empresa) references empresas(ID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS operadores (
@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS operadores (
     PRIMARY KEY(ID),
     UNIQUE KEY(ID),
     UNIQUE KEY(usuario),
-    FOREIGN KEY (id_rol_operador) references roles(ID)
+    FOREIGN KEY (id_rol_operador) references roles(ID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 /*
 CREATE TABLE IF NOT EXISTS llamados (
@@ -156,15 +156,15 @@ CREATE TABLE IF NOT EXISTS tickets (
     fecha_fin DATETIME NULL,
     PRIMARY KEY(ID),
     UNIQUE KEY(ID),
-    FOREIGN KEY (id_operador) references operadores(ID),
-    FOREIGN KEY (id_contacto) references contactos(ID),
-    FOREIGN KEY (id_empresa) references empresas(ID),
-    FOREIGN KEY (id_empresa) references empresas(ID),
-    FOREIGN KEY (id_severidad) references severidades(ID),
-    FOREIGN KEY (id_categoria) references categorias(ID),
-    FOREIGN KEY (id_estado) references estados(ID),
+    FOREIGN KEY (id_operador) references operadores(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_contacto) references contactos(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_empresa) references empresas(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_empresa) references empresas(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_severidad) references severidades(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_categoria) references categorias(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_estado) references estados(ID) ON DELETE CASCADE ON UPDATE CASCADE,
 --  FOREIGN KEY (id_llamado) references llamados(ID),
-    FOREIGN KEY (id_grupo_de_derivacion) references grupos_de_derivacion(ID)
+    FOREIGN KEY (id_grupo_de_derivacion) references grupos_de_derivacion(ID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS comentarios (
@@ -177,8 +177,8 @@ CREATE TABLE IF NOT EXISTS comentarios (
     solucion TINYINT NULL,
     PRIMARY KEY(ID),
     UNIQUE KEY(ID),
-    FOREIGN KEY (id_operador) references operadores(ID),
-    FOREIGN KEY (id_ticket) references tickets(ID)
+    FOREIGN KEY (id_operador) references operadores(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_ticket) references tickets(ID) ON DELETE CASCADE ON UPDATE CASCADE
  -- FOREIGN KEY (id_llamado) references llamados(ID)
 );
 

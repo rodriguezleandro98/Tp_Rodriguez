@@ -1,0 +1,9 @@
+estado,severidad,categoria,mesa,empresa,Contacto,Operador,titulo,descripcion
+Abierto,Baja,Hardware,MDA,"Arcos Dorados","Leandro Rodriguez",lrodriguez,Prueba1,"Descripcion prueba"
+Abierto,Baja,Hardware,MDA,"Burgen King","Javier Arbulu",jsordello,"ya me canse","lo mismo que el titulo"
+Abierto,Alta,Interno,"MDA N2",Zhoe,"Jose Rodriguez",nyamarte,"otra vez?","si querido"
+Cerrado,Media,Interno,"MDA N2","Cola Cola Company","Ariel Rodriguez",lrodriguez,Prueba2,"Descripcion prueba2"
+Abierto,Baja,Hardware,"SLAD N2",Siemmens,"Nancy Regner",lrodriguez,"Prueba lalalalal 3","Se comunica por falla de equipo, se logra resolver"
+Abierto,Baja,Hardware,"SLAD N2",Zhoe,"Jose Rodriguez",jferrufino,"bueno basta","ok te respeto"
+Cerrado,Media,RRHH,"SLAD N3",Pepsi,"Pepe Luis",nyamarte,"CCC - Cambio en RRHH","Gerente pide cambiar cargo en sistema RRHH"
+Abierto,Critica,RRHH,IT,Siemmens,"Ruben Alcaraz",jferrufino,Prueba5,"Descripcion pruebaaaaaaa5"

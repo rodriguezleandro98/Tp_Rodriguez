@@ -6,3 +6,6 @@
 SELECT ID from paises where pais='Bolivia'
 
 -- INTENTAR DE USAR LA SESSION ID() Y USER() 
+
+-- REASIGNAR TICKET.
+-- COMPLETAR POWERPOINT

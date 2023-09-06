@@ -81,6 +81,15 @@ INNER JOIN grupos_de_derivacion as gdd ON t.id_grupo_de_derivacion = gdd.ID
 ORDER BY e.empresa asc
 );
 
+CREATE OR REPLACE VIEW tickets_count_empresa AS (
+
+SELECT COUNT(t.ID) as Cantidad_de_tickets, e.empresa
+FROM empresas as e
+INNER JOIN tickets as t ON t.id_empresa = e.ID
+GROUP BY e.empresa
+ORDER BY e.empresa asc
+);
+
 CREATE OR REPLACE VIEW tickets_employees AS (
 
 SELECT o.ID, o.usuario as Operador, t.ID as Ticket, t.titulo, t.fecha_inicio, es.estado, gdd.mesa
@@ -89,4 +98,22 @@ INNER JOIN tickets as t ON t.id_empresa = o.ID
 INNER JOIN estados as es ON t.id_estado = es.ID
 INNER JOIN grupos_de_derivacion as gdd ON t.id_grupo_de_derivacion = gdd.ID
 ORDER BY o.usuario asc
+);
+
+CREATE OR REPLACE VIEW tickets_count_employees AS (
+
+SELECT COUNT(t.ID) as Cantidad_de_tickets, o.usuario
+FROM operadores as o
+INNER JOIN tickets as t ON t.id_empresa = o.ID
+GROUP BY o.usuario
+ORDER BY o.usuario asc
+);
+
+CREATE OR REPLACE VIEW tickets_count_status AS (
+
+SELECT COUNT(t.ID) as Cantidad_de_tickets, e.estado
+FROM tickets as t
+INNER JOIN estados as e on e.ID = t.id_estado
+GROUP BY e.estado
+ORDER BY e.estado asc
 );
